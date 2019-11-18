@@ -15,7 +15,7 @@ const Todo = () => {
       </article>
       <article className="todo-list">
           {state.map( todoItem => (<TodoItem 
-            key = {todoItem.item.id}
+            key = {todoItem.id}
             item = {todoItem}
           />))}
       </article>

@@ -2,11 +2,18 @@ import React from "react"
 
 const TodoItem = props => {
   console.log(props)
+
+  const checkboxHandler = () =>{
+    if(!props.item.completed){
+      return 'Click To Complete'
+    }
+    return 'Completed'
+  }
   return(
-    <div key={props.id}>
-      <h3>Item</h3>
+    <div key={props.item.id}>
+      <h3>{props.item.item}</h3>
       <button>
-        Checkbox
+        {checkboxHandler()}
       </button>
     </div>
   )

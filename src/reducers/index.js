@@ -1,9 +1,13 @@
 import {v1 as uuid} from 'uuid'
 
 export const initialState = [{
-    item: 'Learn about reducers',
-    completed: false,
-    id: uuid()
+  item: 'Learn about reducers',
+  completed: false,
+  id: uuid()
+},{
+  item: 'fix a bunch of code',
+  completed: true,
+  id: uuid()
 }]
 
 export const todoReducer = (state, action) => {
