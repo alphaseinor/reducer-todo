@@ -1,5 +1,5 @@
 import React, {useState, useReducer} from "react"
-import {initialState, todoReducer} from '../reducers/index.js'
+import {initialState, todoReducer} from '../reducers/todoReducer.js'
 import TodoItem from './TodoItem.js'
 
 const Todo = () => {
