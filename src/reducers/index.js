@@ -1,15 +1,15 @@
-import {uuidv1 as uuid} from 'uuid/v1'
+import {v1 as uuid} from 'uuid'
 
-export const initialState = {
+export const initialState = [{
     item: 'Learn about reducers',
     completed: false,
-    id: uuid
-}
+    id: uuid()
+}]
 
 export const todoReducer = (state, action) => {
   switch (action.type){
     case "ADD_ITEM":
-      return {...state, item: action.payload, completed: false, id: uuid}
+      return {...state, item: action.payload, completed: false, id: uuid()}
     case "TOGGLE_DONE":
       return {...state, completed: !state.completed}
     default:

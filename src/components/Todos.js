@@ -6,12 +6,18 @@ const Todo = () => {
   const [state, dispatch] = useReducer(todoReducer, initialState)
   const [newTodoItem, setNewTodoItem] = useState ();
 
+
+
   return(
     <section>
       <article className="todo-add">
+        
       </article>
       <article className="todo-list">
-          <TodoItem />
+          {state.map( todoItem => (<TodoItem 
+            key = {todoItem.item.id}
+            item = {todoItem}
+          />))}
       </article>
     </section>
   )

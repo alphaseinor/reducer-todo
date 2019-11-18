@@ -3,7 +3,7 @@ import React from "react"
 const TodoItem = props => {
   console.log(props)
   return(
-    <div>
+    <div key={props.id}>
       <h3>Item</h3>
       <button>
         Checkbox
