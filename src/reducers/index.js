@@ -6,6 +6,10 @@ export const initialState = {
 
 export const todoReducer = (state, action) => {
   switch (action.type){
+    case "ADD_ITEM":
+      return {...state, item: action.payload}
+    case "TOGGLE_DONE":
+      return {...state, completed: !state.completed}
     default:
       return state
   }
