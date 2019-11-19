@@ -30,7 +30,7 @@ const TodoApp = () => {
       <input
         type = "text"
         name = "newTodoItem"
-        value = {""}
+        value = {value}
         onChange = {changeHandler}
       />
 
