@@ -8,14 +8,24 @@ export const initialState = [{
   item: 'fix a bunch of code',
   completed: true,
   id: uuid()
+},{
+  item: "Not another item, please lord, not another item",
+  completed: false,
+  id: uuid()
 }]
 
 export const todoReducer = (state, action) => {
   switch (action.type){
     case "ADD_ITEM":
-      return {...state, item: action.payload, completed: false, id: uuid()}
+      return [...state, action.payload]
     case "TOGGLE_DONE":
-      return {...state, completed: !state.completed}
+      return state.map(item => {
+        if(item.id === action.payload){
+          return {...item, completed: !item.completed}
+        }else{
+          return item
+        }
+      })
     default:
       return state
   }

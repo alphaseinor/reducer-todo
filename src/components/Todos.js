@@ -1,12 +1,14 @@
-import React, {useState, useReducer} from "react"
+import React, {useReducer} from "react"
 import {initialState, todoReducer} from '../reducers/todoReducer.js'
 import TodoItem from './TodoItem.js'
 
 const Todo = () => {
   const [state, dispatch] = useReducer(todoReducer, initialState)
-  const [newTodoItem, setNewTodoItem] = useState ();
+  
 
+  //console.log(state[0].id)
 
+  state.map(x => console.log(x.id))
 
   return(
     <section>
@@ -17,6 +19,7 @@ const Todo = () => {
           {state.map( todoItem => (<TodoItem 
             key = {todoItem.id}
             item = {todoItem}
+            dispatch = {dispatch}
           />))}
       </article>
     </section>
