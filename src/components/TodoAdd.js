@@ -1,10 +1,8 @@
 import React, {useState, useReducer} from 'react';
-import {initialState, todoReducer} from '../reducers/todoReducer'
 import {v1 as uuid} from 'uuid'
 
 
-const TodoAdd = () => {
-  const [state, dispatch] = useReducer(todoReducer, initialState)
+const TodoAdd = (props) => {
   const [value, setValue] = useState('');
 
   const changeHandler = e => setValue(e.target.value)
@@ -17,7 +15,7 @@ const TodoAdd = () => {
       id: uuid()
     }
     if(value !== '' ){
-      dispatch({
+      props.dispatch({
         type: "ADD_ITEM",
         payload: newTodo
       })
