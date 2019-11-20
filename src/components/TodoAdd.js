@@ -3,8 +3,8 @@ import {initialState, todoReducer} from '../reducers/todoReducer'
 import {v1 as uuid} from 'uuid'
 
 
-const TodoApp = () => {
-  const {dispatch} = useReducer(todoReducer, initialState)
+const TodoAdd = () => {
+  const [state, dispatch] = useReducer(todoReducer, initialState)
   const [value, setValue] = useState('');
 
   const changeHandler = e => setValue(e.target.value)
@@ -41,4 +41,4 @@ const TodoApp = () => {
   )
 }
 
-export default TodoApp
+export default TodoAdd

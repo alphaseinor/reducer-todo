@@ -1,7 +1,7 @@
 import React from "react"
 
 const TodoItem = props => {
-  console.log(props)
+  console.log(`TodoItem props ${props}`)
 
   const checkboxHandler = () =>{
     if(!props.item.completed){
