@@ -10,6 +10,10 @@ const Todo = () => {
     dispatch({type: 'TOGGLE_DONE', payload: id})
   }
 
+  const handleClear = () => {
+    dispatch({type: 'CLEAR_COMPLETED_ITEMS'})
+  }
+
   return(
     <section>
       <article className="todo-add">
