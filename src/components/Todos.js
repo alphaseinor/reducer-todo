@@ -27,6 +27,11 @@ const Todo = () => {
             dispatch = {dispatch}
           />))}
       </article>
+      <article>
+        <button
+          onClick = {handleClear}
+        >Remove Completed Items</button>
+      </article>
     </section>
   )
 } 
