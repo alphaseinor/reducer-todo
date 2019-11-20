@@ -5,11 +5,10 @@ import TodoItem from './TodoItem.js'
 
 const Todo = () => {
   const [state, dispatch] = useReducer(todoReducer, initialState)
-  
 
-  //console.log(state[0].id)
-
-  state.map(x => console.log(x.id))
+  const handleToggle = (id) => {
+    dispatch({type: 'TOGGLE_DONE', payload: id})
+  }
 
   return(
     <section>
@@ -20,6 +19,7 @@ const Todo = () => {
           {state.map( todoItem => (<TodoItem 
             key = {todoItem.id}
             item = {todoItem}
+            handleToggle = {handleToggle}
             dispatch = {dispatch}
           />))}
       </article>
