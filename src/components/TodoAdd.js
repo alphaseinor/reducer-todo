@@ -23,6 +23,10 @@ const TodoAdd = (props) => {
     }
   }
 
+  const handleClear = () => {
+    props.dispatch({type: 'CLEAR_COMPLETED_ITEMS'})
+  }
+
   return(
     <form>
       <input
@@ -35,6 +39,9 @@ const TodoAdd = (props) => {
       <button 
         onClick = {addTodo}
       >submit</button>
+      <button
+          onClick = {handleClear}
+        >Remove Completed Items</button>
     </form>
   )
 }
