@@ -1,9 +1,11 @@
+import {v1 as uuid} from 'uuid'
+
 export const initialState = [
-  // {
-  // item: 'Learn about reducers',
-  // completed: false,
-  // id: uuid()
-  // }
+  {
+  item: 'Learn about reducers',
+  completed: false,
+  id: uuid()
+  }
 ]
 
 export const todoReducer = (state, action) => {
